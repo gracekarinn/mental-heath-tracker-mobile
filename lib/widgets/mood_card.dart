@@ -3,6 +3,7 @@ import 'package:mental_health_tracker/screens/moodentry_form.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:mental_health_tracker/screens/login.dart';
+import 'package:mental_health_tracker/screens/list_moodentry.dart';
 
 class ItemHomepage {
   final String name;
@@ -74,6 +75,11 @@ class ItemCard extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => const MoodEntryFormPage()),
+            );
+          } else if (item.name == "Lihat Mood") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MoodEntryPage()),
             );
           } else if (item.name == "Logout") {
             final response =
